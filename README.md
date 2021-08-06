@@ -1,1 +1,1 @@
-# dinner-service
+# dinner-eats
