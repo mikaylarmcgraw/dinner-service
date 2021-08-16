@@ -14,12 +14,12 @@
 
         public async Task<T> Add(T entity)
         {
-
             var result = await AddImpl(entity);
             return result;
         }
 
         protected abstract Task<T> AddImpl(T entity);
+        protected abstract List<string> GetItems();
 
         public Task<Guid> Delete(Guid Id)
         {
@@ -31,9 +31,10 @@
             throw new NotImplementedException();
         }
 
-        public IAsyncEnumerable<T> Get()
+        public List<string> Get()
         {
-            throw new NotImplementedException();
+            var result = GetItems();
+            return result;
         }
 
         public Task<Guid> Upsert(T JobService)

@@ -9,7 +9,7 @@ namespace DinnerMenu.Core
     public interface IRepository<T> where T : ModelBase
     {
         Task<T> Get(Guid Id);
-        IAsyncEnumerable<T> Get();
+        List<string> Get();
         Task<T> Add(T entity);
         Task<Guid> Delete(Guid Id);
         Task<Guid> Upsert(T entity);

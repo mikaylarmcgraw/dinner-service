@@ -20,9 +20,10 @@
         }
 
         [HttpGet("")]
-        public void Get()
+        public List<string> Get()
         {
-
+            var result = _service.Get();
+            return result;
         }
 
         [HttpPost("")]

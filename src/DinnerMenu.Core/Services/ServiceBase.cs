@@ -7,7 +7,11 @@
     public abstract class ServiceBase<T> : IServiceBase<T> where T : ModelBase
     {
 
-
+        public List<string> Get()
+        {
+            var result =  GetItems();
+            return result;
+        }
         public async Task<T> Add(T input)
         {
            
@@ -18,6 +22,7 @@
 
         protected abstract Task<T> AddImpl(T entity);
 
+        protected abstract List<string> GetItems();
 
     }
 }

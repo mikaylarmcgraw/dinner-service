@@ -29,19 +29,21 @@ namespace DinnerMenu.Core
             throw new NotImplementedException();
         }
 
-        public Task<Dinner> Get(Guid Id)
+        public List<string> Get(Guid Id)
         {
             throw new NotImplementedException();
         }
 
-        public IAsyncEnumerable<Dinner> Get()
-        {
-            throw new NotImplementedException();
-        }
 
         public Task<Guid> Upsert(Dinner entity)
         {
             throw new NotImplementedException();
+        }
+
+        protected override List<string> GetItems()
+        {
+            var result = _repository.Get();
+            return result;
         }
     }
 }
