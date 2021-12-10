@@ -11,10 +11,10 @@
     public class DinnerMenuRepository : RepositoryBase<Dinner>, IDinnerRepository
     {
 
-        protected override async Task<Dinner> AddImpl(Dinner entity)
+        protected override Task<Dinner> AddImpl(Dinner entity)
         {
             File.AppendAllText("DinnerDb.txt", entity.Name + "\n");
-            return entity;
+            return Task.FromResult(entity);
         }
 
         protected override List<string> GetItems()
