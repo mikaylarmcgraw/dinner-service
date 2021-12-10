@@ -10,5 +10,7 @@ namespace DinnerMenu.Core.Repositories
     public interface IDinnerIngridientRepository
     {
         public List<Ingredient> AddIngridient(Dinner dinnerItem, Ingredient entry);
+
+        public bool DeleteIngridient(Dinner dinnerItem, string ingridientName);
     }
 }
